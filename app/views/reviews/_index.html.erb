@@ -1,0 +1,12 @@
+<% if @product.reviews.any? %>
+  <% @product.reviews.each do |review| %>
+    <blockquote class="blockquote review">
+      <div class="review-content">
+        <p><%= review.content %></p>
+      </div>
+      <footer class="blockquote-footer"><%= review.account.user.email %></footer>
+    </blockquote>
+  <% end %>
+<% else %>
+  <p>No saved reviews.</p>
+<% end %>

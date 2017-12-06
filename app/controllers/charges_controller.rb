@@ -1,6 +1,6 @@
 class ChargesController < ApplicationController
   def index
-    @orders = Order.all
+    @orders = Order.history(current_user)
   end
 
   def new

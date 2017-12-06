@@ -1,0 +1,12 @@
+<h1> <%= @product.name.capitalize %> </h1>
+
+<% if @product.stock <= 10 %>
+  <h5 id="low-stock">Low stock</h5>
+<% end %>
+
+<h3>Reviews:</h3>
+<hr>   
+<%= render "reviews/index" %>
+
+<h3>Post a Review:</h3>
+<%= render "reviews/form" %>

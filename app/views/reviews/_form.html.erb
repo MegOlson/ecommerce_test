@@ -1,0 +1,7 @@
+<%= form_for [@product, @review] do |f| %>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control", rows: 4, cols: 50%>
+  </div>
+  <%= f.submit class: "btn" %>
+<% end %>

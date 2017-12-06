@@ -2,9 +2,10 @@
 
 <% if @orders.any? %>
   <% @orders.each do |order| %>
-    <p> <%= order.order_items %> </p>
+    <% order.order_items.each do |item| %>
+      <p><%= link_to item.product.name.capitalize, product_path(item.product) %></p>
+    <% end %>
   <% end %>
-  <%= @orders.first.order_items.first.product.name %>
 <% else %>
   <p>You haven't made any orders yet.</p>
 <% end %>
