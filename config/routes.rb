@@ -7,9 +7,8 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-  resource :cart, only: [:show] do
-    resources :charges
-  end
+  resource :cart, only: [:show]
+  resources :charges
 
   resources :order_items
   resources :accounts

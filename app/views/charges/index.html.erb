@@ -1,0 +1,10 @@
+<h1>Order History</h1>
+
+<% if @orders.any? %>
+  <% @orders.each do |order| %>
+    <p> <%= order.order_items %> </p>
+  <% end %>
+  <%= @orders.first.order_items.first.product.name %>
+<% else %>
+  <p>You haven't made any orders yet.</p>
+<% end %>
