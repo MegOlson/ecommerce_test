@@ -1,0 +1,20 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+nav {
+  background-color: rgba(106, 152, 151, .4);
+}
+
+nav a {
+  color: black;
+}
+
+.btn {
+  background-color: #eee;
+  margin-top: 4px;
+}
+
+.cart-form {
+  width: 19%;
+}

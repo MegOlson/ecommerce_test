@@ -1,0 +1,22 @@
+<% if @products.any? %>
+    <% @products.each do |product| %>
+
+      <div class="flex-container">
+        <br>
+        <hr>
+        <p><%= link_to product.name.capitalize, product_path(product) %> | <%= number_to_currency product.price %> </p>
+      </div>
+      <div class="cart-form">
+          <%= form_for @order_item, remote: true do |f| %>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.number_field :quantity, class: "form-control" %>
+            <%= f.submit "Add to cart", class: 'btn ' %>
+            <%= f.submit "Save for Later", class: 'btn ' %>
+          <% end %>
+        </div>
+      <hr>
+    <% end %>
+  </div>
+<% else %>
+    <p>Products coming soon!</p>
+<% end %>
