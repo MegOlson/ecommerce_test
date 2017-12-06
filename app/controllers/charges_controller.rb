@@ -22,7 +22,10 @@ class ChargesController < ApplicationController
       :currency    => 'usd',
       :receipt_email => customer.email
     )
+
     @cart.update(status: 'Placed')
+    Product.lower_stock(@cart)
+    session[:order_id] = nil
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
