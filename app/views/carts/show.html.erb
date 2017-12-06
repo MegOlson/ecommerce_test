@@ -17,7 +17,7 @@
 </ol>
 <hr>
   <p>Your Total: <%= number_to_currency current_order.total_price %></p>
-  <button type="button" class="btn"> <%= link_to "Checkout", new_charge_path %> </button>
+  <button type="button" class="btn"> <%= link_to "Checkout", new_cart_charge_path %> </button>
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>
